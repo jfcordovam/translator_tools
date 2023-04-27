@@ -1,0 +1,121 @@
+/* Define some variables for colors and fonts */
+:root {
+  --primary-color: #4285f4;
+  --secondary-color: #fbbc05;
+  --text-color: #333;
+  --font-family: 'Roboto', sans-serif;
+}
+
+/* Apply the variables to the page elements */
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+
+label {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+label:hover {
+  background-color: #3367d6;
+}
+
+/* Style the forms */
+form {
+  margin-bottom: 1em;
+}
+
+form > label {
+  margin-right: 1em;
+}
+
+/* Add styles for each step */
+#step1, #step2 {
+  margin-bottom: 2em;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  padding: 1em;
+}
+
+#step1 {
+  background-color: #fff;
+}
+
+#step2 {
+  background-color: var(--secondary-color);
+}
+
+.file-input-label {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.file-input-label:hover {
+  background-color: #3367d6;
+}
+
+.file-input-label:after {
+  content: 'Seleccionar archivo';
+}
+
+.file-input-text {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+/* Style the file upload and download buttons */
+.file-upload-button, .file-download-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.file-upload-button:hover, .file-download-button:hover {
+  background-color: #3367d6;
+}

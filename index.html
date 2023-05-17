@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Translate tools</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <h1>Translate tools</h1>
-  <div id="step-1" class="step">
-    <h4>Paso n°1: Cargar archivo .txt de subtítulos tal cual como llegó</h4>
+  <head>
+    <title>Translate tools</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Translate tools</h1>
+    <h2>Paso n1: Cargar archivo .txt de subtítulos tal cual como llegó</h2>
     <form id="form1">
       <input type="file" id="file-input-step1" accept=".txt">
-      <button id="upload-button-1" type="submit" class="grey">Procesar</button>
+      <button type="submit">Subir archivo</button>
     </form>
     <p>Esto descargará el archivo resultado, con los subtítulos en una sola línea</p>
-  </div>
-  <div class="step">
-    <h4>Paso n°2: Usando tu propio traductor, debes traducir todo el archivo de subtítulos</h4>
-  </div>
-  <div id="step-2" class="step">
-    <h4>Paso n°3: Debes subir el archivo traducido, este paso se encargará de corregir los puntos</h2>
-      <form id="form2">
-        <input type="file" id="file-input-step2" accept=".txt">
-        <button id="upload-button-2" type="submit" class="grey">Procesar</button>
-      </form>
-      <p>Esto descargará el archivo resultado, con los puntos corregidos</p>
-  </div>
-
-  <script type="module" src="script.js"></script>
-</body>
-
+    <h2>Paso n2: Usando tu propio traductor, debes traducir todos los subtítulos</h2>
+    <h2>Paso n3: Debes subir el archivo traducido, este paso se encargará de corregir los puntos</h2>
+    <form id="form2">
+      <input type="file" id="file-input-step2" accept=".txt">
+      <button type="submit">Subir archivo</button>
+    </form>
+    <p>Esto descargará el archivo resultado, con los puntos corregidos</p>
+    <script type="module" src="script.js"></script>
+  </body>
 </html>

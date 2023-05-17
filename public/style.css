@@ -4,6 +4,8 @@
   --secondary-color: #fbbc05;
   --text-color: #333;
   --font-family: 'Roboto', sans-serif;
+  --error-color: #fc9288;
+  --success-color: #baf5c5;
 }
 
 /* Apply the variables to the page elements */
@@ -118,4 +120,31 @@ form > label {
 
 .file-upload-button:hover, .file-download-button:hover {
   background-color: #3367d6;
+}
+
+button.grey {
+  background-color: grey;
+}
+
+button.blue {
+  background-color: var(--primary-color);
+}
+
+input {
+  font-weight: bold;
+  font-family: monospace;
+}
+
+input.error {
+  background-color: var(--error-color);
+}
+
+div.step {
+  max-width: 50%;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+div.step.success {
+  background-color: var(--success-color);
 }

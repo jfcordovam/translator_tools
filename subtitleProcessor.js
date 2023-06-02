@@ -10,11 +10,27 @@ export default function processSubtitles(textContent, stepNr) {
     result += `${processMatches(regex, textContent)}`;
 
     // fix: get last dialogue too
-    result += `${processMatches(LAST_DIALOGUE_REGEX, textContent)}`;
+    let resultRegex = getSecondGroup(textContent, LAST_DIALOGUE_REGEX);
+    resultRegex[0].split("\n").forEach(line => {
+        result += `${line}\n`;
+    });
 
     return result;
 }
 
+function getMatches(string, regex, index) {
+    index || (index = 1); // default to the first capturing group
+    var matches = [];
+    var match;
+    while (match = regex.exec(string)) {
+      matches.push(match[index]);
+    }
+    return matches;
+  }
+  
+function getSecondGroup(textcontent, regex) {
+    return getMatches(textcontent, regex, 1)
+}
 
 
 // Returns how many times a 'char' appears in 'text'

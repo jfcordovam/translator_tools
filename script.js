@@ -2,33 +2,32 @@ import processSubtitles from './subtitleProcessor.js';
 
 const form1 = document.querySelector('#form1');
 const form2 = document.querySelector('#form2');
-const fileInput = document.querySelector('#file-input-step1');
+const textArea = document.querySelector('#text-area-content-step1');
 const fileInput2 = document.querySelector('#file-input-step2');
-
-fileInput.addEventListener('change', (event) => checkFile(event, 1));
 fileInput2.addEventListener('change', (event) => checkFile(event, 2));
 
 function checkFile(event, buttonNumber) {
-  // Get the uploaded file
-  const file = event.target.files[0];
+    // Get the uploaded file
+    console.log(event.target);
+    const file = event.target.files[0];
 
-  let button = document.querySelector('#upload-button-' + buttonNumber);
+    let button = document.querySelector('#upload-button-' + buttonNumber);
 
-  // Check if a file was uploaded successfully
-  if (file) {
-    // Change the button style to blue
-    button.classList.remove('grey');
-    button.classList.add('blue'); 
-    toggleOffErrorUpload(buttonNumber);
-  } else {
-    button.classList.add('grey');
-    button.classList.remove('blue'); 
-  }
+    // Check if a file was uploaded successfully
+    if (file) {
+        // Change the button style to blue
+        button.classList.remove('grey');
+        button.classList.add('blue');
+        toggleOffErrorUpload(buttonNumber);
+    } else {
+        button.classList.add('grey');
+        button.classList.remove('blue');
+    }
 }
 
 form1.addEventListener('submit', (event) => {
     event.preventDefault();
-    processFileEvent(fileInput, 1);
+    processTextContent(textArea)
 
 });
 
@@ -37,6 +36,15 @@ form2.addEventListener('submit', (event) => {
     processFileEvent(fileInput2, 2);
 
 });
+
+function processTextContent(textArea) {
+    let result = processSubtitles(textArea.value, 1);
+
+    if (result) {
+        downloadFile(result, `result${1}.txt`);
+        showSuccessStep(1);
+    }
+}
 
 function processFileEvent(fileInput, stepNr) {
 
@@ -47,10 +55,8 @@ function processFileEvent(fileInput, stepNr) {
         const reader = new FileReader();
         reader.onload = (event) => {
 
-            const text = event.target.result
-
+            const text = event.target.result.toString();
             let result = processSubtitles(text, stepNr);
-
 
             if (result) {
                 downloadFile(result, `result${stepNr}.txt`);
@@ -66,16 +72,16 @@ function processFileEvent(fileInput, stepNr) {
     }
 }
 
-function showAlert(text){
+function showAlert(text) {
     window.alert(text);
 }
 
-function showErrorUpload(number){
+function showErrorUpload(number) {
     let input = document.querySelector('#file-input-step' + number);
     input.classList.add('error');
 }
 
-function toggleOffErrorUpload(number){
+function toggleOffErrorUpload(number) {
     let input = document.querySelector('#file-input-step' + number);
     input.classList.remove('error');
 }

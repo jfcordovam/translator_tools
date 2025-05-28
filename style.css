@@ -17,7 +17,8 @@ body {
   padding: 0;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 500;
   margin-top: 1em;
   margin-bottom: 0.5em;
@@ -43,7 +44,6 @@ button:hover {
   background-color: #3367d6;
 }
 
-
 label {
   display: inline-block;
   background-color: var(--primary-color);
@@ -52,6 +52,14 @@ label {
   padding: 0.5em 1em;
   cursor: pointer;
   transition: background-color 0.2s;
+}
+
+textarea {
+  width: 94%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
 }
 
 label:hover {
@@ -68,7 +76,8 @@ form > label {
 }
 
 /* Add styles for each step */
-#step1, #step2 {
+#step1,
+#step2 {
   margin-bottom: 2em;
   border: 1px solid #ccc;
   border-radius: 0.25em;
@@ -107,7 +116,8 @@ form > label {
 }
 
 /* Style the file upload and download buttons */
-.file-upload-button, .file-download-button {
+.file-upload-button,
+.file-download-button {
   background-color: var(--primary-color);
   color: #fff;
   border: none;
@@ -118,7 +128,8 @@ form > label {
   transition: background-color 0.2s;
 }
 
-.file-upload-button:hover, .file-download-button:hover {
+.file-upload-button:hover,
+.file-download-button:hover {
   background-color: #3367d6;
 }
 
@@ -140,7 +151,7 @@ input.error {
 }
 
 div.step {
-  max-width: 50%;
+  max-width: 75%;
   border-radius: 15px;
   padding: 10px;
 }
